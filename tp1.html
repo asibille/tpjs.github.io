@@ -8,9 +8,9 @@
 
 
 <script type="text/javascript">
-	var note1 = prompt("donner une premiere note");
-	var note2 = prompt("donner une deuxieme note");
-	var note3 = prompt("donner une troisieme note");
+	var note1 = prompt("donner une premiere note: ");
+	var note2 = prompt("donner une deuxieme note: ");
+	var note3 = prompt("donner une troisieme note: ");
 	var somme = note1*2 + note2*2 + note3*3;
 
 	var moyenne = somme/7;
@@ -19,19 +19,29 @@
 	document.write ("<td> <h3>"+"voila votre moyenne:" +moyenne+"</td>");
 	document.write("</tr> <table>")
 
-	if(moyenne>=10)
-		{alert ("admis")
-	document.bgColor="green";}
-	else
-		{alert ("non admis")
-			document.bgColor="red";}
-	if(moyenne>=8)
-		{alert ("rattrapage")
-			document.bgColor="orange";}
+	if(moyenne>=10) // Axamen OK
+		{
+			alert ("admis");
+			document.bgColor="green";
+		}
+	else // ici note<10 ; soit <8 KO soit entre 8 et 9.99 rarttrapage
+		{
+			if(moyenne>=8) // droit au rattrapage
+			{
+				alert ("rattrapage");
+				document.bgColor="orange";
+			}
+			else // donc <8 : Exam KO
+			{
+				alert ("non admis");
+				alert ("redoublant");
+				document.bgColor="red";
+			}
+		}
+	
+	
 		
-	else
-		{alert ("redoublant")
-	document.bgColor="red";}
+	
 </script>
 </body>
 </html>
